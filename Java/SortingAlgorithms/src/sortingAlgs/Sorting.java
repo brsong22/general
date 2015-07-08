@@ -44,20 +44,18 @@ public class Sorting {
 	}
 
 	//BubbleSort
-	List<String> l = new ArrayList<String>();
 	public static int[] bubbleSort(int[] A){
-		boolean swapped = false;
-		do{
-			swapped = false;
-			for(int i = 1; i < A.length; i++){
+		int count = 0;
+		while(count < A.length-2){
+			for(int i = 1; i < A.length-count; i++){
 				if(A[i] < A[i-1]){
 					int temp = A[i];
 					A[i] = A[i-1];
 					A[i-1] = temp;
-					swapped = true;
 				}
 			}
-		}while(swapped);
+			count++;
+		}
 		return A;
 	}
 
